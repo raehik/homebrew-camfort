@@ -19,7 +19,7 @@ class Camfort < Formula
   #   root_url # something
   #   cellar :any
   #   sha256 '' => :yosemite
-  #   sha256 '' => :el_capitan
+  #   sha256 'db3e662adef93ecd4639ad4101c52e20825117dcad39c804ace7ebaf6ab2e6d6' => :el_capitan
   # end
 
   def install
