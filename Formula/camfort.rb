@@ -6,14 +6,15 @@ class Camfort < Formula
 
   desc 'Refactoring and verification tool for Fortran'
   homepage 'http://www.cl.cam.ac.uk/research/dtg/naps/'
-  url 'http://hackage.haskell.org/package/camfort-0.802/camfort-0.802.tar.gz'
+  url 'https://hackage.haskell.org/package/camfort-0.802/camfort-0.802.tar.gz'
   head 'https://github.com/camfort/camfort.git'
-  version '0.802'
   sha256 'de057c0bfc71ff291b7a0e5581eaddaceadedc83af00774a329593a11842d6a2'
 
   depends_on 'ghc' => :build
   depends_on 'cabal-install' => :build
-  depends_on 'gsl'
+  depends_on 'gsl' => :linked
+  depends_on 'pcre' => :linked
+  depends_on 'gmp' => :linked
 
   # bottle do
   #   root_url # something
