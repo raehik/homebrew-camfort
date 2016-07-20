@@ -11,17 +11,17 @@ class Camfort < Formula
 
   head 'https://github.com/camfort/camfort.git'
 
-  depends_on 'ghc' => :build
-  depends_on 'cabal-install' => :build
-  depends_on 'gsl' => :linked
-  depends_on 'pcre' => :linked
-  depends_on 'gmp' => :linked
-
   bottle do
     root_url 'http://www.cl.cam.ac.uk/research/dtg/camfort/bottles'
     cellar :any
     sha256 'ebe2f1cdef6d00c77eca2028013f1f5668ab2e78703ee4308b5050ca4de06b4e' => :el_capitan
   end
+
+  depends_on 'ghc' => :build
+  depends_on 'cabal-install' => :build
+  depends_on 'gsl' => :linked
+  depends_on 'pcre' => :linked
+  depends_on 'gmp' => :linked
 
   def install
     install_cabal_package using: %w(alex happy)
