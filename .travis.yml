@@ -1,25 +1,23 @@
 language: objective-c
 os: osx
 matrix:
-  include:
-    - osx_image: xcode7.3
-    - osx_image: xcode7.1
-    - osx_image: beta-xcode6.2
+  fast_finish: true
 env:
   matrix:
-    - FORMULA_VERSION=
-    - FORMULA_VERSION=--HEAD
+  - FORMULA_VERSION=
+  - FORMULA_VERSION=--HEAD
 before_install:
-  - brew update
-  - brew --env
-  - brew config
+- brew update
+- brew --env
+- brew config
 install:
-  - mkdir -p $(brew --repo)/Library/Taps/camfort
-  - ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/camfort/homebrew-camfort
+- mkdir -p $(brew --repo)/Library/Taps/camfort
+- ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/camfort/homebrew-camfort
 script:
-  - brew install camfort $FORMULA_VERSION --verbose
-  - brew audit camfort --strict
-  - brew test camfort
-  - camfort --version
-matrix:
-  fast_finish: true
+- brew install camfort $FORMULA_VERSION --verbose
+- brew audit camfort --strict
+- brew test camfort
+- camfort --version
+notifications:
+  slack:
+    secure: WvwT3BggaPQCT5HxdBMOrCYlXLf3gb/1XkLwmLi9SVzX0ZAsd1z7qquMbAn02qudI7pLLbGheBloj5pYTTyvvE4HRq3/LOKgKrCRrkwAjLVPTvpZtHoHg++lytoA0X5EA7zJGoqOR+rbcsEYIXlVxS/ciBdEGLcyig2A1cX19OfxEjTO/7DKjPWLWfoyyD39BWed4wNgKSGSpv+lk8r3M1KkZg5qs/IYu1DD3FIyRbMF3gYvD0XaXs+qy0Sf0AEuVMXHDPMIlbUzJUmUjC0Po5qyoks1+aNB/ZvD8h4mSGMoysAon4jqZt9qt4Xl4LMaefALvV7OeP50fDGqcW2mqFGNPfVlvs+3x8FezKsVo+SNr00sA72mhdPoT23Gwhis+feq77huYIh8zSR3CemKZ9cZPcdTrBN0t5J/2+Ryfx/Zo++mDKmlbtUV7qSTWAFE6MGa1AkoYHlRpyBzKkcnUPzpHy2OP2VnepvVDUxJ2Yplj0GXpcMLAgpTGO0dRhMm4Ec2Vc5b8ISgGrk8zKd+jKdJ7RH971aW6IIhmx1DljU39WEI/XqsLGBHoNjhxZ5c0K2TT8EI+cKIlHgUj5KEy7ePd+qsqkLYcE9mEXx1qH3H2RIXkMO3GxKZn7NYanEGMP4dqH//h7vKWpb/46JKZ7Ke+1R58G5GEhFw7CAOqnM=
