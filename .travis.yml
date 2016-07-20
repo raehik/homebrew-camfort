@@ -14,7 +14,7 @@ install:
 - mkdir -p $(brew --repo)/Library/Taps/camfort
 - ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/camfort/homebrew-camfort
 script:
-- travis_wait 30 'brew install camfort $FORMULA_VERSION --verbose'
+- travis_wait 30 "brew install camfort $FORMULA_VERSION --verbose"
 - brew audit camfort --strict
 - brew test camfort
 - camfort --version
