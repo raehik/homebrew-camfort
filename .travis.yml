@@ -1,11 +1,17 @@
-language: objective-c
 os: osx
+osx_image:
+  - xcode8
+  - xcode7.1
+  - beta-xcode6.2
+env:
+  - OPTS=
+  - OPTS=-s
+  - OPTS=--HEAD
 matrix:
   fast_finish: true
-env:
-  matrix:
-  - FORMULA_VERSION=
-  - FORMULA_VERSION=--HEAD
+  exclude:
+  - osx_image: beta-xcode6.2
+    env: OPTS=
 before_install:
 - brew update
 - brew --env
@@ -14,7 +20,7 @@ install:
 - mkdir -p $(brew --repo)/Library/Taps/camfort
 - ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/camfort/homebrew-camfort
 script:
-- travis_wait 60 "brew install camfort $FORMULA_VERSION --verbose"
+- travis_wait 60 "brew install camfort $OPTS --verbose"
 - brew audit camfort --strict
 - brew test camfort
 - camfort --version
