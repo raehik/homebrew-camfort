@@ -1,5 +1,6 @@
 os: osx
 osx_image:
+  matrix:
   - xcode8
   - xcode7.1
   - beta-xcode6.2
