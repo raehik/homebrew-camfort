@@ -14,6 +14,7 @@ class Camfort < Formula
   bottle do
     root_url 'http://www.cl.cam.ac.uk/research/dtg/camfort/bottles'
     cellar :any
+    sha256 'c56debec8f1d5514d18d8c216f8197f90d06ee887fbb95f8234c1894f8a6bf90' => :yosemite
     sha256 'ebe2f1cdef6d00c77eca2028013f1f5668ab2e78703ee4308b5050ca4de06b4e' => :el_capitan
   end
 
