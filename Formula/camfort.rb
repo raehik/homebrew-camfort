@@ -16,7 +16,7 @@ class Camfort < Formula
   bottle do
     root_url "https://github.com/camfort/camfort/releases/download/v#{VERSION}"
     cellar :any
-    # sha256 "c56debec8f1d5514d18d8c216f8197f90d06ee887fbb95f8234c1894f8a6bf90" => :yosemite
+    sha256 "384853a24424f36cfc5ad76b666630bf411e46fb75bcac7b314db6254917562f" => :yosemite
     sha256 "c83bc0b922b294ad4bd375b1dc8ca8b47b55ab4966289ebc0427076106fa1bd4" => :el_capitan
   end
 
