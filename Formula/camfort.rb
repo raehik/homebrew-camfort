@@ -4,20 +4,20 @@ require "language/haskell"
 class Camfort < Formula
   include Language::Haskell::Cabal
 
-  VERSION = "0.804".freeze
+  VERSION = "0.900".freeze
 
   desc "Refactoring and verification tool for Fortran"
   homepage "http://www.cl.cam.ac.uk/research/dtg/naps/"
   url "https://hackage.haskell.org/package/camfort-#{VERSION}/camfort-#{VERSION}.tar.gz"
-  sha256 "45a0d5df36e9cd948b37eb8bdf51cbe8e9b414b09a402214fc4873c4f77f3b2d"
+  sha256 "fc92d5a5d5ecf42470d4f7aea2848eb785e44ba925949df86599e7b96f4a4427"
 
   head "https://github.com/camfort/camfort.git"
 
   bottle do
     root_url "https://github.com/camfort/camfort/releases/download/v#{VERSION}"
     cellar :any
-    sha256 "384853a24424f36cfc5ad76b666630bf411e46fb75bcac7b314db6254917562f" => :yosemite
-    sha256 "c83bc0b922b294ad4bd375b1dc8ca8b47b55ab4966289ebc0427076106fa1bd4" => :el_capitan
+    #sha256 "384853a24424f36cfc5ad76b666630bf411e46fb75bcac7b314db6254917562f" => :yosemite
+    sha256 "12e492a28117d8f4069e95a30eaa286655b9e66561afe33d8274a0c498e6f4f0" => :el_capitan
   end
 
   depends_on "ghc" => :build
