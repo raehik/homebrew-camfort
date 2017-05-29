@@ -17,6 +17,7 @@ class Camfort < Formula
     root_url "https://github.com/camfort/camfort/releases/download/v#{VERSION}"
     cellar :any
     sha256 "593c11b580dbd8cfc1e1ddaaa582434afdb58760d813619bddcd27bdbe91d6b8" => :sierra
+    sha256 "5cf849671005183a10091de38f551b54056ebe5957c5ff6dedc177a48a3d7bb5" => :el_capitan
   end
 
   depends_on "ghc" => :build
