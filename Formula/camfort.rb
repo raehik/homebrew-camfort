@@ -7,7 +7,7 @@ class Camfort < Formula
   VERSION = "0.904".freeze
 
   desc "Refactoring and verification tool for Fortran"
-  homepage "http://www.cl.cam.ac.uk/research/dtg/naps/"
+  homepage "https://camfort.github.io"
   url "https://hackage.haskell.org/package/camfort-#{VERSION}/camfort-#{VERSION}.tar.gz"
   sha256 "28c6dd7134e79acefe3abb1b6b95c3f5200610a136d4257428e16847d84e3548"
 
