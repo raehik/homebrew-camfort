@@ -13,11 +13,12 @@ class Camfort < Formula
 
   head "https://github.com/camfort/camfort.git"
 
-  # bottle do
-  #   root_url "https://github.com/camfort/camfort/releases/download/v#{VERSION}"
-  #  cellar :any
-  #  sha256 "" => :sierra
-  # end
+  bottle do
+    root_url "https://github.com/camfort/camfort/releases/download/v#{VERSION}"
+
+    cellar :any
+    sha256 "9e01bc86b64ddce70611ab57543fa660fbaa0acedf92858e5720558912590929" => :sierra
+  end
 
   depends_on "ghc" => :build
   depends_on "cabal-install" => :build
