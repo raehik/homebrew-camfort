@@ -25,6 +25,7 @@ class Camfort < Formula
   depends_on "pcre" => :linked
   depends_on "gmp" => :linked
   depends_on "z3" => :linked
+  depends_on "brewsci/science/flint" => :linked
 
   def install
     install_cabal_package :using => %w[alex happy]
