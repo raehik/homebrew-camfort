@@ -2,7 +2,7 @@
 Plus a semi-automated GitHub Actions CI setup for publishing bottles.
 
 ## Users: Use
-    brew install raehik/camfort/camfort
+    brew install camfort/camfort/camfort
 
 ## Devs: Release
 https://brew.sh/2020/11/18/homebrew-tap-with-bottles-uploaded-to-github-releases/
