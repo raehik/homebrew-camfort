@@ -1,35 +1,27 @@
-require "language/haskell"
-
-# Homebrew formula for CamFort
 class Camfort < Formula
-  include Language::Haskell::Cabal
-
-  VERSION = "0.905".freeze
+  VERSION = "1.1.1".freeze
 
   desc "Refactoring and verification tool for Fortran"
   homepage "https://camfort.github.io"
   url "https://hackage.haskell.org/package/camfort-#{VERSION}/camfort-#{VERSION}.tar.gz"
-  sha256 "65242679050d2107586ec08890107cb9da6e46890768bfa056cf46ad674f9793"
-
-  head "https://github.com/camfort/camfort.git"
+  sha256 "4e18389bdaa075d499383dde88c1ccb00f2e695c05622447296a112e5c2d739c"
+  license "Apache-2.0"
+  head "https://github.com/camfort/camfort.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/camfort/camfort/releases/download/v#{VERSION}"
-
-    cellar :any
-    sha256 "9e01bc86b64ddce70611ab57543fa660fbaa0acedf92858e5720558912590929" => :sierra
+    root_url "https://github.com/raehik/homebrew-camfort/releases/download/camfort-1.1.1"
+    sha256 cellar: :any, catalina: "ef0d37ac451e2ce103df6756904be011f429719acc5cae290395c2460003ea28"
   end
 
-  depends_on "ghc" => :build
   depends_on "cabal-install" => :build
-  depends_on "gsl" => :linked
-  depends_on "pcre" => :linked
-  depends_on "gmp" => :linked
+  depends_on "ghc" => :build
+
+  depends_on "flint" => :linked
   depends_on "z3" => :linked
-  depends_on "madgen/science/flint" => :linked
 
   def install
-    install_cabal_package :using => %w[alex happy]
+    system "cabal", "v2-update"
+    system "cabal", "v2-install", *std_cabal_v2_args
   end
 
   test do
