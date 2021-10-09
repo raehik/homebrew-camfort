@@ -8,6 +8,11 @@ class Camfort < Formula
   license "Apache-2.0"
   head "https://github.com/camfort/camfort.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/camfort/homebrew-camfort/releases/download/camfort-1.1.2"
+    sha256 cellar: :any, catalina: "8a5d005efdf59908d96d3022ac01b765fc12c6380b5aa58411f51b1909fda5cc"
+  end
+
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
 
