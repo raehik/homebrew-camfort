@@ -16,6 +16,8 @@ class Camfort < Formula
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
 
+  depends_on "openblas" => :linked
+  depends_on "lapack" => :linked
   depends_on "flint" => :linked
   depends_on "z3" => :linked
 
